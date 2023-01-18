@@ -21,9 +21,8 @@
         const formInputs = [...name, ...address, ...phoneNumber];
 
         formInputs.forEach(input => {
-            console.log(input);
             input.addEventListener("keydown", (e) => {
-                if (e.keyCode === 190) {
+                if (e.keyCode === 191) {
                     e.preventDefault();
                 }
             })
