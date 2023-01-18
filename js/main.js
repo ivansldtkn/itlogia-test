@@ -14,28 +14,41 @@
 
         new WOW().init();
 
-        let formBtn = $('#formBtn');
+        const name = $('#username');
+        const address = $('#address');
+        const phoneNumber = $('#phone-number');
+
+        const formInputs = [...name, ...address, ...phoneNumber];
+
+        formInputs.forEach(input => {
+            console.log(input);
+            input.addEventListener("keydown", (e) => {
+                if (e.keyCode === 190) {
+                    e.preventDefault();
+                }
+            })
+        })
+
+        const formBtn = $('#formBtn');
+
         formBtn.click(function () {
 
             let hasError = false;
             $('input').removeClass('input-warning');
             $('label').removeClass('input-error');
 
-            let name = $('#username');
             if (!name.val()) {
                 hasError = true;
                 $('#name-error').addClass('input-error');
                 name.addClass('input-warning');
             }
 
-            let address = $('#address');
             if (!address.val()) {
                 hasError = true;
                 $('#address-error').addClass('input-error');
                 address.addClass('input-warning');
             }
 
-            let phoneNumber = $('#phone-number');
             if (!phoneNumber.val()) {
                 hasError = true;
                 $('#phone-number-error').addClass('input-error');
