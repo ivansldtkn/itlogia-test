@@ -22,7 +22,7 @@
 
         formInputs.forEach(input => {
             input.addEventListener("keydown", (e) => {
-                if (e.keyCode === 191) {
+                if (e.key === ",") {
                     e.preventDefault();
                 }
             })
